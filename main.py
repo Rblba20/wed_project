@@ -9,5 +9,15 @@ def home():
     return render_template('main.html')
 
 
+@app.route('/phone_scammers')
+def phone_scamers():
+    return render_template('phone_scammers.html')
+
+
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
