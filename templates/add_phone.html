@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="static/css/add_phone.css"/>
+    <title>Добавить номер мошенника</title>
+    </head>
+<body>
+<form  class="login_form" method="post">
+  <fieldset>
+    <legend>Заполните форму</legend>
+    <label>Мобильный:<br><input type="text" name="mobile"></label><br>
+      <textarea name="message" cols="30" rows="4" placeholder="Напишите инфомацию о мошеннике"></textarea>
+      <label><br>Укажите дату и время, когда был совершен звонок(примерно)<br><input name="datetime-local" type="datetime-local" /></label><br>
+      <div>
+      <label for="regions"> Выберите регион проживания</label>
+      <select name="regions">
+        <option value="Алтайский край">Алтайский край</option>
+        <option value="Амурская область">Амурская область</option>
+        <option value="Архангельская область">Архангельская область</option>
+          <option value="Астраханская область">Астраханская область</option>
+          <option value="Белгородская область">Белгородская область</option>
+          <option value="Брянская область">Брянская область</option>
+          <option value="Владимирская область">Владимирская область</option>
+          <option value="Волгоградская область">Волгоградская область</option>
+          <option value="Вологодская область">Вологодская область</option>
+          <option value="Воронежская область">Воронежская область</option>
+          <option value="г. Москва">г. Москва</option>
+          <option value="Еврейская автономная область">Еврейская автономная область</option>
+          <option value="Забайкальский край">Забайкальский край</option>
+          <option value="Ивановская область">Ивановская область</option>
+          <option value="Иные территории, включая город и космодром Байконур">Иные территории, включая город и космодром Байконур</option>
+          <option value="Иркутская область">Иркутская область</option>
+          <option value="Кабардино-Балкарская Республика">Кабардино-Балкарская Республика</option>
+          <option value="Калининградская область">Калининградская область</option>
+          <option value="Калужская область">Калужская область</option>
+          <option value="Камчатский край">Камчатский край</option>
+          <option value="Карачаево-Черкесская Республика">Карачаево-Черкесская Республика</option>
+          <option value="Кемеровская область - Кузбасс">Кемеровская область - Кузбасс</option>
+          <option value="Кировская область">Кировская область</option>
+          <option value="Костромская область">Костромская область</option>
+          <option value="Краснодарский край">Краснодарский край</option>
+          <option value="Красноярский край">Красноярский край</option>
+          <option value="Курганская область">Курганская область</option>
+          <option value="Курская область">Курская область</option>
+          <option value="Ленинградская область">Ленинградская область</option>
+          <option value="Липецкая область">Липецкая область</option>
+          <option value="Магаданская область">Магаданская область</option>
+          <option value="Московская область">Московская область</option>
+          <option value="Мурманская область">Мурманская область</option>
+          <option value="Ненецкий автономный округ">Ненецкий автономный округ</option>
+          <option value="Нижегородская область">Нижегородская область</option>
+          <option value="Новгородская область">Новгородская область</option>
+          <option value="Новосибирская область">Новосибирская область</option>
+          <option value="Омская область">Омская область</option>
+          <option value="Оренбургская область">Оренбургская область</option>
+          <option value="Орловская область">Орловская область</option>
+          <option value="Пензенская область">Пензенская область</option>
+          <option value="Пермский край">Пермский край</option>
+          <option value="Приморский край">Приморский край</option>
+          <option value="Псковская область">Псковская область</option>
+          <option value="Республика Адыгея">Республика Адыгея</option>
+          <option value="Республика Алтай">Республика Алтай</option>
+          <option value="Республика Башкортостан">Республика Башкортостан</option>
+          <option value="Республика Бурятия">Республика Бурятия</option>
+          <option value="Республика Дагестан">Республика Дагестан</option>
+          <option value="Республика Ингушетия">Республика Ингушетия</option>
+          <option value="Республика Калмыкия">Республика Калмыкия</option>
+          <option value="Республика Карелия">Республика Карелия</option>
+          <option value="Республика Коми">Республика Коми</option>
+          <option value="Республика Крым">Республика Крым</option>
+          <option value="Республика Марий Эл">Республика Марий Эл</option>
+          <option value="Республика Мордовия">Республика Мордовия</option>
+          <option value="Республика Саха">Республика Саха</option>
+          <option value="Республика Северная Осетия">Республика Северная Осетия</option>
+          <option value="Республика Татарстан">Республика Татарстан</option>
+          <option value="Республика Тыва">Республика Тыва</option>
+          <option value="Республика Хакасия">Республика Хакасия</option>
+          <option value="Ростовская область">Ростовская область</option>
+          <option value="Рязанская область">Рязанская область</option>
+          <option value="Самарская область">Самарская область</option>
+          <option value="Санкт-Петербург">Санкт-Петербург</option>
+          <option value="Саратовская область">Саратовская область</option>
+          <option value="Сахалинская область">Сахалинская область</option>
+          <option value="Свердловская область">Свердловская область</option>
+          <option value="Севастополь">Севастополь</option>
+          <option value="Смоленская область">Смоленская область</option>
+          <option value="Ставропольский край">Ставропольский край</option>
+          <option value="Тамбовская область">Тамбовская область</option>
+          <option value="Тверская область">Тверская область</option>
+          <option value="Томская область">Томская область</option>
+          <option value="Тульская область">Тульская область</option>
+          <option value="Тюменская область">Тюменская область</option>
+          <option value="Удмуртская Республика">Удмуртская Республика</option>
+          <option value="Ульяновская область">Ульяновская область</option>
+          <option value="Хабаровский край">Хабаровский край</option>
+          <option value="Ханты-Мансийский автономный округ">Ханты-Мансийский автономный округ</option>
+          <option value="Челябинская область">Челябинская область</option>
+          <option value="Чеченская Республика">Чеченская Республика</option>
+          <option value="Чувашская Республика">Чувашская Республика</option>
+          <option value="Чукотский автономный округ">Чукотский автономный округ</option>
+          <option value="Ямало-Ненецкий автономный округ">Ямало-Ненецкий автономный округ</option>
+          <option value="Ярославская область">Ярославская область</option>
+
+
+      </select>
+      <div class="select-arrow"></div>
+    </div>
+  </fieldset>
+  <input type="submit">
+</form>
+</body>
+</html>
