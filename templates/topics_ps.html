@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="static/css/two.css" />
+    <title>Телефонные мошенники</title>
+    <style>
+      .button {
+      float: right;
+      background-color: #00a000;
+      border: none;
+      color: white;
+      padding: 20px 34px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 4px 2px;
+      cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+        <a href="/phone_scammers" class="button">Вернуться</a>
+<table width="100%" border="1" cellpadding="4" cellspacing="0">
+   <caption>Информация о номере</caption>
+   <tr>
+    <th>Номер:</th><th>{{phones[number]}}</th>
+   </tr>
+   <tr>
+    <td>Дата и время звонка:</td><td>{{datetimes[number]}}</td>
+   </tr>
+   <tr>
+    <td>Регион:</td><td>{{regions[number]}}</td>
+   </tr>
+   <tr>
+    <td>Подробная информация:</td><td>{{texts[number]}}</td>
+   </tr>
+  </table>
+</body></html>

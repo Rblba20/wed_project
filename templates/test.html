@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="static/css/two.css" />
     <title>Телефонные мошенники</title>
-    <style>li{list-style-type: none}</style>
     <style>
       .button {
       float: right;
@@ -30,18 +29,16 @@
         <ul class="horizontal right menu"></ul><div class="clear"></div>
         <a href="http://127.0.0.1:8080/add_phone" class="button">Добавить объект</a>
         <div id="content">
-            <table><tr><td id="td_center"><div class="black"><div class="list"><dl class="disabled_minus">
-    <ul>
-    {% for number in numbers %}
-        <li> <dt><div class="number"><sup>{{ number }}</sup></div></dt><dd class="odd"><div class="inner"><div class="text"><div class="cover">
-        <h3><a href={links[number-1]}>{{ phones[number-1] }}</a></h3><p>{{ regions[number-1] }}</p></div></div></div></dd>.format(link=link)</li>
-    {% endfor %}
-</ul>
-</dl>
-                <div id="refresh_global"></div></div></div></td>
-</tr></table></div>
+<table>
+{% for row in numbers %}
+<tr>
+{% for d in row %}
+    <td><a href="{{links[0]}}">{{phones[0]}}</a></td>
+{% endfor %}
+</tr>
+{% endfor %}
+</table>
+</div>
         </div></div></div>
 </body></html>
-
-
 
