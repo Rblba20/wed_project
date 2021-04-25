@@ -1,9 +1,10 @@
 import sqlite3
 
 from flask import Flask, request, url_for, render_template
-import pandas as pd
 from phone_data import create
 from sn_data import create_sn
+from si_data import create_si
+
 app = Flask(__name__)
 
 
@@ -164,7 +165,69 @@ def topic_sn(number):
     for i in range(len(text)):
         text[i] = str(text[i])[2:-3]
     number = int(number) - 1
-    return render_template('topic_sn.html', number=number, link=link_, text=text, date=date,)
+    return render_template('topic_sn.html', number=number, link=link_, text=text, date=date, )
+
+
+@app.route('/scam_in_the_internet')
+def scam_in_the_internet():
+    con = sqlite3.connect("db/scammers_in_the_internet.db")
+    cr = con.cursor()
+    numbers = cr.execute("""SELECT NUMBER FROM internet WHERE NUMBER > 0""").fetchall()
+    links_i = cr.execute("""SELECT LINK FROM internet
+                WHERE NUMBER > 0""").fetchall()
+    texts = cr.execute("""SELECT TEXT FROM internet
+                WHERE NUMBER > 0""").fetchall()
+    headings = cr.execute("""SELECT HEADING FROM internet
+                WHERE NUMBER > 0""").fetchall()
+    links = []
+    for i in numbers:
+        a = '/topic/si/' + str(i)[1:2]
+        links.append(a)
+    print(numbers, links_i, texts,  links, headings)
+    for i in range(len(numbers)):
+        numbers[i] = str(numbers[i])[1:-2]
+    for i in range(len(links_i)):
+        links_i[i] = str(links_i[i])[2:-3]
+    for i in range(len(texts)):
+        texts[i] = str(texts[i])[2:-3]
+    for i in range(len(headings)):
+        headings[i] = str(headings[i])[2:-3]
+    print(numbers, links_i, texts, links, headings)
+    return render_template('si_scammers.html', numbers=numbers, headings=headings, texts=texts,
+                           links_i=links_i, links=links)
+
+
+@app.route('/add_si', methods=['POST', 'GET'])
+def add_si():
+    if request.method == 'GET':
+        return render_template('add_si.html')
+    elif request.method == 'POST':
+        heading = request.form['heading']
+        text = request.form['message']
+        link_ = request.form['link']
+        print(heading, text, link_)
+        fout = open("data.txt", "wt", encoding="utf8")
+        str_ = heading + '_&_' + link_ + '_&_' + text
+        fout.write(str_)
+        fout.close()
+        create_si()
+        return render_template('return.html')
+
+
+@app.route('/topic/si/<int:number>')
+def topic_si(number):
+    con = sqlite3.connect("db/scammers_in_the_internet.db")
+    cr = con.cursor()
+    link_ = cr.execute("""SELECT LINK FROM internet
+                WHERE NUMBER > 0""").fetchall()
+    text = cr.execute("""SELECT TEXT FROM internet
+                WHERE NUMBER > 0""").fetchall()
+    for i in range(len(link_)):
+        link_[i] = str(link_[i])[2:-3]
+    for i in range(len(text)):
+        text[i] = str(text[i])[2:-3]
+    number = int(number) - 1
+    return render_template('topic_si.html', number=number, link=link_, text=text)
 
 
 if __name__ == '__main__':

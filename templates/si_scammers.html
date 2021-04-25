@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="static/css/two.css" />
+    <title>Мошенники в интернете</title>
+    <style>
+      .button {
+      float: right;
+      background-color: #00a000;
+      border: none;
+      color: white;
+      padding: 20px 34px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 4px 2px;
+      cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+<div id="layout">
+    <div id="middle"><div id="header"><ul class="horizontal left menu" ></ul>
+        <div class="center"><span class="l"><i class="bg_img"></i></span>
+        <span class="r"><i class="bg_img"></i></span><h1>Мошенники в интернете</h1></div>
+        <ul class="horizontal right menu"></ul><div class="clear"></div>
+        <a href="/add_si" class="button">Добавить объект</a>
+        <div id="content">
+<table>
+   {% set count = namespace(a=0) %}
+{% for row in numbers %}
+<tr>
+{% for d in row %}
+    <td><a href="{{links[ count.a ]}}">{{headings[ count.a ]}}</a></td>
+    {% set count.a = count.a + 1 %}
+
+{% endfor %}
+</tr>
+{% endfor %}
+</table>
+</div>
+        </div></div></div>
+</body></html>
