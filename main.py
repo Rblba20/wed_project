@@ -183,7 +183,7 @@ def scam_in_the_internet():
     for i in numbers:
         a = '/topic/si/' + str(i)[1:2]
         links.append(a)
-    print(numbers, links_i, texts,  links, headings)
+    print(numbers, links_i, texts, links, headings)
     for i in range(len(numbers)):
         numbers[i] = str(numbers[i])[1:-2]
     for i in range(len(links_i)):
@@ -228,6 +228,11 @@ def topic_si(number):
         text[i] = str(text[i])[2:-3]
     number = int(number) - 1
     return render_template('topic_si.html', number=number, link=link_, text=text)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 
 if __name__ == '__main__':
