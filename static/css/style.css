@@ -32,3 +32,29 @@ button:before {
 input:focus {
   border-color: #311c24;
 }
+
+body {
+margin: 0;
+padding: 0;
+}
+
+#header {
+height: 200px;
+background: url('header.jpg') repeat-x;
+}
+
+#content {
+height: 300px;
+font-size: 12pt;
+}
+
+#content p {
+margin: 20px;
+}
+
+#footer {
+height: 200px;
+background: url('footer.jpg') repeat-x;
+text-align: center;
+font-size: 14pt;
+}
