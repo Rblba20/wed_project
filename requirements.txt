@@ -1,1 +1,4 @@
+wtforms
+werkzeug
+sqlalchemy
 flask
