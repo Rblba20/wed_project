@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from flask import Flask, request, url_for, render_template, redirect
+from flask import Flask, request, render_template, redirect
 from phone_data import create
 from sn_data import create_sn
 from si_data import create_si
@@ -34,9 +34,9 @@ def start():
     db_sess = db_session.create_session()
     if current_user.is_authenticated:
         news = db_sess.query(News).filter(
-            (News.user == current_user) | (News.is_private != True))
+            (News.user == current_user) | (News.is_private is not True))
     else:
-        news = db_sess.query(News).filter(News.is_private != True)
+        news = db_sess.query(News).filter(News.is_private is not True)
     return render_template("main.html", news=news)
 
 
@@ -312,4 +312,4 @@ def page_not_found(e):
 if __name__ == '__main__':
     db_session.global_init("db/blogs.db")
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='127.0.0.1', port=port)
+    app.run(host='0.0.0.0', port=port)
